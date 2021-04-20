@@ -4,23 +4,13 @@ import { UpdateNewUserDto } from './dto/update-new-user.dto';
 
 @Injectable()
 export class NewUserService {
+  constructor(
+    @InjectRepository(NewUserRepository) private readonly
+    newUserRepository: NewUserRepository
+  ){}
+
+  // creates a new user using information entered
   create(createNewUserDto: CreateNewUserDto) {
     return 'This action adds a new newUser';
-  }
-
-  findAll() {
-    return `This action returns all newUser`;
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} newUser`;
-  }
-
-  update(id: number, updateNewUserDto: UpdateNewUserDto) {
-    return `This action updates a #${id} newUser`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} newUser`;
   }
 }
